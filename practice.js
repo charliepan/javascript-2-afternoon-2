@@ -127,7 +127,23 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray) {
+  let arr1 = [];
+  let arr2 = [];
+  let finalArr = [];
+  for (let i = 0; i < numbersArray.length; i++) {
+    if(numbersArray[i] % 2 === 0){
+      arr1.push(numbersArray[i]);
+    }
+    else{
+      arr2.push(numbersArray[i]);
+    }
+  }
+  finalArr.push(arr1);
+  finalArr.push(arr2);
+  return finalArr;
+  
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -149,7 +165,10 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arr) {
+  let randomNumber = getRandomArbitrary();
+  return arr.includes(randomNumber);
+};
 
 
 ////////// PROBLEM 8 //////////
@@ -178,7 +197,30 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item) {
+  if(item != undefined && myGroceryList != undefined){
+    for (let i = 0; i < myGroceryList.length; i++) {
+      if(myGroceryList[i] === item){
+        myGroceryList.splice(i,1);
+      }
+    }
+    return myGroceryList;  
+  }
+  else{
+    return [];
+  }
+  
+}
 
+function addItem(myGroceryList, item) {
+  if(item != undefined && myGroceryList != undefined){
+    myGroceryList.push(item);
+    return myGroceryList;
+  }
+  else{
+    return [];
+  }
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -188,8 +230,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
-
+function maker() {
+  let arr = [];
+  for (let i = 1; i <= 215; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -204,8 +251,21 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
+function addTen(numbers) {
+  for (let i = 0; i < numbers.length; i++) {
+      if (isNaN(numbers[i])) {
+        let num = parseInt(numbers[i]) + 10;
+        numbers.splice(i,1,num);
+      }
+      else{
+        numbers[i] += 10;
+      }
+  }
+  return numbers
+}
 
-
+var test = addTen(numbers);
+test
 
 ////////// PROBLEM 11 //////////
 
@@ -229,7 +289,14 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2) {
+  if(arr1.length > arr2.length){
+    return arr1;
+  }
+  else{
+    return arr2;
+  }
+}
 
 
 /*
@@ -241,7 +308,9 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1, arr2) {
+  let larr = longer(arr1, arr2);
+}
 
 
 ////////// PROBLEM 12 //////////
